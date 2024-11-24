@@ -1,18 +1,40 @@
+"use client"
 import Link from "next/link";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {  faBars } from '@fortawesome/free-solid-svg-icons'
+import { useState } from "react";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="bg-[#0f2a3f] flex justify-between items-center px-10 py-2 sticky top-0 ">
+    <div className="bg-[#0f2a3f] flex justify-between items-center px-6 py-4 sticky top-0 z-20">
+      {/* Logo Section */}
       <div>
-        {/* <h1 className="text-3xl font-bold ml-8" >Hammad.</h1> */}
-        <Link href="#" className="text-3xl font-bold ml-14">Hammad.</Link>
+        <Link href="#" className="text-2xl md:text-3xl ml-5 font-bold">
+          Hammad.
+        </Link>
       </div>
-      <div>
-        <nav className="flex items-center px-10 py-4 space-x-10 font-bold  ">
-          <Link href="#home" className="hover:text-blue-500 ">
+
+      {/* Hamburger Menu Button for Mobile */}
+      <button
+        className="text-white md:hidden"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <FontAwesomeIcon icon={faBars} />
+      </button>
+
+      {/* Navigation Links */}
+      <div
+        className={`${
+          isOpen ? "block" : "hidden"
+        } absolute top-16 left-0 w-full bg-[#0f2a3f] text-center md:relative md:top-0 md:flex md:w-auto md:items-center`}
+      >
+        <nav className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-10 font-bold p-4 md:p-0">
+          <Link href="#home" className="hover:text-blue-500">
             Home
           </Link>
-          <Link href="#about" className="hover:text-blue-500 ">
+          <Link href="#about" className="hover:text-blue-500">
             About
           </Link>
           <Link href="#Projects" className="hover:text-blue-500">
@@ -23,9 +45,9 @@ export default function Navbar() {
           </Link>
           <Link href="#contact" className="hover:text-blue-500">
             Contact
-          </Link>   
+          </Link>
         </nav>
       </div>
     </div>
   );
-}
+};

@@ -24,7 +24,7 @@ export default function Skills() {
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="bg-[#0f2a3f] p-4 rounded-lg shadow-lg hover:bg-blue-500"
+              className="bg-[#0f2a3f] p-4 rounded-lg shadow-lg hover:bg-blue-500 transition-transform hover:scale-105 cursor-pointer"
             >
               <p className="text-lg font-semibold">{skill}</p>
             </div>

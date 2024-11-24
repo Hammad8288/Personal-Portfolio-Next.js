@@ -50,24 +50,24 @@ export default function Projects() {
   ];
 
   return (
-    <section className="bg-[#081b29] py-20 text-white " id="Projects">
+    <section className="bg-[#081b29] py-20 text-white" id="Projects">
       <h2 className="text-4xl font-bold text-center mb-10">Projects</h2>
       <div className="grid gap-10 px-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {Projects.map((project) => (
           <div
             key={project.id}
-            className="bg-[#0f2a3f] rounded-lg overflow-hidden shadow-lg"
+            className="bg-[#0f2a3f] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105"
           >
             <Image
               src={project.Image}
               alt={project.title}
-             width={300}
+              width={300}
               height={100}
-              className=" "
+              className=" w-full object-cover"
             />
             <div className="p-6">
               <h3 className="text-2xl font-semibold">{project.title}</h3>
-              <p className="text-sm mt-2">{project.desc}</p>
+              <p className="text-sm mt-2 text-gray-300">{project.desc}</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {project.tags.map((tag, index) => (
                   <span
@@ -78,12 +78,12 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-              <div className="mt-6 flex space-x-4">
+              <div className="mt-6 flex flex-wrap gap-4">
                 <a
                   href={project.vercelLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-blue-500 hover:bg-blue-600 text-sm  font-semibold px-4 py-2 rounded"
+                  className="bg-blue-500 hover:bg-blue-600 text-sm font-semibold px-4 py-2 rounded transition-colors"
                 >
                   Live Demo
                 </a>
@@ -91,7 +91,7 @@ export default function Projects() {
                   href={project.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gray-700 hover:bg-gray-800  text-sm font-semibold px-4 py-2 rounded"
+                  className="bg-gray-700 hover:bg-gray-800 text-sm font-semibold px-4 py-2 rounded transition-colors"
                 >
                   GitHub Repo
                 </a>

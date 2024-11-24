@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+
 export default function Hero() {
   return (
-    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-12 pt-20 ">
+    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pt-20 ">
       {/* Text Section */}
       <div className="sm:w-1/2">
         <h1 className="text-3xl ml-11 mt-6 font-bold sm:text-4xl">
-          Hello! I am <span className="text-blue-500">Hammad Ahmed</span>, a
+          Hello! I am <span className="text-blue-500 ">Hammad Ahmed</span>, a
           Software developer based in Pakistan.
         </h1>
         <p className="ml-11 mt-4 text-lg">
@@ -22,7 +23,7 @@ export default function Hero() {
           discuss potential collaborations, share insights, or explore new
           opportunities. Lets contact and build something amazing together!
         </p>
-        <div className="flex mt-4 ml-7">
+        <div className="flex mt-4 ml-7 ">
           <Link
             href="https://github.com/Hammad8288?tab=repositories"
             target="_blank"
@@ -61,7 +62,7 @@ export default function Hero() {
           width={350}
           height={350}
           alt="Hammad Ahmed"
-          className=" rounded-full object-cover shadow-2xl"
+          className="hidden md:block rounded-full object-cover shadow-2xl"
         />
       </div>
     </div>
