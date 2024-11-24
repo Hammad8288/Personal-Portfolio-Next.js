@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pt-20 ">
+    <div className="flex flex-col sm:flex-row pt-5 items-start sm:items-center justify-between md:pt-20 ">
       {/* Text Section */}
       <div className="sm:w-1/2">
         <h1 className="text-3xl ml-11 mt-6 font-bold sm:text-4xl">
